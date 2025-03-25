@@ -1,0 +1,77 @@
+body {
+    font-family: 'Georgia', serif; /* Classier font */
+    background-color: #1a1a1a; /* Dark blackish-gray background */
+    color: #d4af37; /* Gold text for elegance */
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #0d0d0d; /* Slightly darker black for contrast */
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid #d4af37; /* Gold border */
+}
+
+header h1 {
+    color: #d4af37; /* Gold header */
+    font-size: 2em;
+    margin: 0;
+    text-transform: uppercase; /* Adds a refined touch */
+    letter-spacing: 2px;
+}
+
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #262626; /* Slightly lighter dark gray for content area */
+    border: 1px solid #d4af37; /* Gold border */
+    border-radius: 5px; /* Subtle rounding */
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); /* Soft gold glow */
+}
+
+h2 {
+    color: #d4af37; /* Gold for subheadings */
+    font-size: 1.5em;
+    border-bottom: 1px solid #d4af37; /* Underline effect */
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #333333; /* Darker gray for list items */
+    border-left: 3px solid #d4af37; /* Gold accent on the left */
+}
+
+li strong {
+    color: #ffffff; /* White for file names to stand out */
+}
+
+li p {
+    margin: 5px 0 0;
+    color: #cccccc; /* Light gray for content text */
+}
+
+a {
+    color: #d4af37; /* Gold links */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+a:hover {
+    color: #ffffff; /* White on hover for contrast */
+    text-decoration: underline;
+}
+
+footer p {
+    color: #d4af37;
+    font-size: 0.9em;
+    margin: 0;
+}

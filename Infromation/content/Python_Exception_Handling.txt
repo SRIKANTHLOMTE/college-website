@@ -1,0 +1,110 @@
+Python Exception Handling (Try, Except, Finally, Raise)
+
+1️⃣ Basic Try-Except Block
+---------------------------
+The `try` block contains code that might cause an error, and the `except` block handles the error.
+
+Example:
+try:
+    x = 10 / 0  # Division by zero
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero!")
+
+Output:
+Error: Cannot divide by zero!
+
+This prevents the program from crashing!
+
+-------------------------------------------------------------
+
+2️⃣ Handling Multiple Exceptions
+---------------------------
+Use multiple `except` blocks to handle different types of errors.
+
+Example:
+try:
+    num = int(input("Enter a number: "))
+    result = 10 / num
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero!")
+except ValueError:
+    print("Error: Please enter a valid number!")
+
+Example Outputs:
+Input: abc
+Output: Error: Please enter a valid number!
+
+Input: 0
+Output: Error: Cannot divide by zero!
+
+-------------------------------------------------------------
+
+3️⃣ Using `else` with `try-except`
+---------------------------
+The `else` block runs only if no exceptions occur.
+
+Example:
+try:
+    num = int(input("Enter a number: "))
+    result = 100 / num
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero!")
+except ValueError:
+    print("Error: Invalid input!")
+else:
+    print(f"Result: {result}")
+
+If there is no error, the `else` block executes.
+
+-------------------------------------------------------------
+
+4️⃣ Using `finally` Block
+---------------------------
+The `finally` block executes no matter what (useful for cleanup).
+
+Example:
+try:
+    f = open("test.txt", "r")
+    print(f.read())
+except FileNotFoundError:
+    print("Error: File not found!")
+finally:
+    print("Execution finished!")
+
+Example Output:
+Error: File not found!
+Execution finished!
+
+Even though the file doesn't exist, `finally` still runs.
+
+-------------------------------------------------------------
+
+5️⃣ Raising Custom Exceptions
+---------------------------
+Use `raise` to create custom error messages.
+
+Example:
+num = -5
+if num < 0:
+    raise ValueError("Negative numbers are not allowed!")
+
+Output:
+Traceback (most recent call last):
+  File "script.py", line 3, in <module>
+    raise ValueError("Negative numbers are not allowed!")
+ValueError: Negative numbers are not allowed!
+
+Useful for enforcing custom rules!
+
+-------------------------------------------------------------
+
+🎯 Summary
+---------------------------
+| Concept             | Usage |
+|---------------------|--------------------------------|
+| `try-except`        | Handle runtime errors |
+| `try-except-else`   | Run code if no exception occurs |
+| `finally`           | Always executes (cleanup, closing files) |
+| `raise`             | Manually trigger an exception |
+
+🚀 Now you can handle errors like a pro! Need more examples? 😊

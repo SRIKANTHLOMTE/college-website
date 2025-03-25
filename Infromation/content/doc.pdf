@@ -1,0 +1,187 @@
+Explain the built in methods and attributes in the python?
+
+
+Answer:
+   In Python, built-in methods and attributes are functionalities and properties that come pre-packaged with Python objects (like lists, strings, dictionaries, etc.) without needing to import external libraries. These are part of Python's standard library and are available for immediate use. I'll break this down into key categories with examples, focusing on commonly used types like strings, lists, dictionaries, and more.
+
+1. Built-in Methods
+Built-in methods are functions associated with specific object types that perform actions or manipulate the object's data. They’re typically called using dot notation (object.method()).
+
+String Methods
+Strings are immutable sequences of characters, and Python provides a variety of methods to manipulate them:
+
+str.lower(): Converts all characters to lowercase.
+python
+
+Collapse
+
+Wrap
+
+Copy
+text = "HELLO"
+print(text.lower())  # Output: hello
+str.upper(): Converts all characters to uppercase.
+str.strip(): Removes leading and trailing whitespace.
+str.split(sep): Splits the string into a list based on a separator.
+python
+
+Collapse
+
+Wrap
+
+Copy
+text = "apple,banana,orange"
+print(text.split(","))  # Output: ['apple', 'banana', 'orange']
+str.join(iterable): Joins elements of an iterable into a string using the string as a separator.
+python
+
+Collapse
+
+Wrap
+
+Copy
+words = ['hello', 'world']
+print(" ".join(words))  # Output: hello world
+str.replace(old, new): Replaces occurrences of old with new.
+List Methods
+Lists are mutable sequences, and their methods often modify the list in place:
+
+list.append(x): Adds an element to the end.
+python
+
+Collapse
+
+Wrap
+
+Copy
+lst = [1, 2, 3]
+lst.append(4)
+print(lst)  # Output: [1, 2, 3, 4]
+list.pop(index): Removes and returns the element at the given index (default is last item).
+list.sort(): Sorts the list in place.
+list.reverse(): Reverses the order of the list.
+list.index(x): Returns the first index of x.
+Dictionary Methods
+Dictionaries are mutable key-value mappings:
+
+dict.get(key, default): Returns the value for key or default if the key doesn’t exist.
+python
+
+Collapse
+
+Wrap
+
+Copy
+d = {'a': 1, 'b': 2}
+print(d.get('c', 0))  # Output: 0
+dict.keys(): Returns a view of all keys.
+dict.values(): Returns a view of all values.
+dict.items(): Returns a view of key-value pairs.
+dict.pop(key): Removes and returns the value for key.
+Set Methods
+Sets are unordered collections of unique elements:
+
+set.add(x): Adds an element to the set.
+set.remove(x): Removes an element (raises KeyError if not found).
+set.union(other): Returns a new set with elements from both sets.
+python
+
+Collapse
+
+Wrap
+
+Copy
+s1 = {1, 2}
+s2 = {2, 3}
+print(s1.union(s2))  # Output: {1, 2, 3}
+General Object Methods
+Some methods are available to most objects due to Python’s object-oriented nature:
+
+__str__(): Returns a string representation of the object (called by str()).
+__len__(): Returns the length of the object (called by len()).
+2. Built-in Attributes
+Attributes are properties or data associated with an object, accessed using dot notation (object.attribute). Unlike methods, they don’t require parentheses because they’re not functions—they’re values.
+
+__dict__: For custom classes, this attribute is a dictionary containing the object’s writable attributes.
+python
+
+Collapse
+
+Wrap
+
+Copy
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+p = Person("Alice")
+print(p.__dict__)  # Output: {'name': 'Alice'}
+__class__: Returns the class of the object.
+python
+
+Collapse
+
+Wrap
+
+Copy
+x = "hello"
+print(x.__class__)  # Output: <class 'str'>
+__doc__: Returns the docstring of an object (if defined).
+python
+
+Collapse
+
+Wrap
+
+Copy
+print(str.__doc__)  # Outputs the docstring for the str class
+Some built-in types (like strings or integers) don’t expose many public attributes beyond these special ones (called "dunder" attributes, short for double underscore), but custom objects or modules often have more.
+
+3. Special (Dunder) Methods and Attributes
+Python uses special methods (with double underscores, e.g., __init__, __str__) to define how objects behave with operators or built-in functions. These are part of Python’s data model:
+
+__init__(self, ...): Constructor for initializing an object.
+__add__(self, other): Defines behavior for the + operator.
+python
+
+Collapse
+
+Wrap
+
+Copy
+class Num:
+    def __init__(self, value):
+        self.value = value
+    def __add__(self, other):
+        return Num(self.value + other.value)
+
+a = Num(5)
+b = Num(3)
+c = a + b
+print(c.value)  # Output: 8
+__len__(self): Defines behavior for len().
+__getitem__(self, key): Enables indexing (obj[key]).
+These are typically defined in custom classes but are implicitly used by built-in types.
+
+4. Built-in Functions Related to Objects
+Python also provides built-in functions that interact with object methods and attributes:
+
+len(obj): Calls obj.__len__() to get the length.
+type(obj): Returns the type of the object.
+dir(obj): Lists all valid attributes and methods of an object.
+python
+
+Collapse
+
+Wrap
+
+Copy
+x = "hello"
+print(dir(x))  # Lists all string methods and attributes
+hasattr(obj, name): Checks if an object has a specific attribute.
+Summary
+Methods are actions you can perform on objects (e.g., append, split, get).
+Attributes are data or properties tied to objects (e.g., __dict__, __class__).
+Dunder methods customize object behavior for operators and built-in functions.
+Each Python type (string, list, dict, etc.) has its own set of built-in methods tailored to its purpose.
+If you want a deeper dive into a specific type (e.g., lists, strings) or examples for a particular use case, let me know!
